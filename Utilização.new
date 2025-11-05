@@ -1,0 +1,138 @@
+# Sistema de Gestão de Consultas Médicas
+
+Sistema completo para agendamento de consultas médicas, desenvolvido com React no frontend e Spring Boot + Kotlin no backend.
+
+## Funcionalidades Principais
+
+### Para Pacientes:
+- Registro e login
+- Dashboard personalizado com consultas agendadas
+- Visualização de médicos por especialização
+- Agendamento de consultas
+- Cancelamento de consultas
+- Histórico de atendimentos
+- Edição de perfil
+
+### Para Médicos:
+- Registro e login
+- Dashboard com estatísticas e consultas do dia
+- Visualização de consultas por data
+- Gerenciamento de consultas
+- Edição de perfil e especialização
+
+## Tecnologias Utilizadas
+
+### Frontend:
+- React.js
+- React Bootstrap
+- Bootstrap Icons
+- Axios para requisições HTTP
+- React Router para navegação
+
+### Backend:
+- Kotlin
+- Spring Boot
+- Spring Security
+- Spring Data JPA
+- JWT para autenticação
+
+### Banco de Dados:
+- MySQL
+
+## Como Executar o Projeto
+
+### Pré-requisitos:
+- Node.js e npm instalados
+- JDK 17+ instalado
+- MySQL instalado e rodando
+
+### Backend (Spring Boot + Kotlin):
+1. Navegue até a pasta do backend:
+   ```
+   cd backend
+   ```
+
+2. Execute o comando para iniciar o servidor:
+   ```
+   ./gradlew bootRun
+   ```
+   
+   Ou no Windows:
+   ```
+   gradlew.bat bootRun
+   ```
+
+3. O servidor backend será iniciado na porta 8090
+
+### Frontend (React):
+1. Navegue até a pasta do frontend:
+   ```
+   cd frontend
+   ```
+
+2. Instale as dependências:
+   ```
+   npm install
+   ```
+
+3. Inicie o servidor de desenvolvimento:
+   ```
+   npm start
+   ```
+
+4. Acesse a aplicação no navegador:
+   ```
+   http://localhost:3000
+   ```
+
+## Estrutura do Banco de Dados
+
+O sistema utiliza três tabelas principais:
+
+1. **pacientes** - Armazena informações dos pacientes
+2. **medicos** - Armazena informações dos médicos, incluindo especialização
+3. **consultas** - Armazena informações das consultas agendadas
+
+## Usuários de Teste
+
+Para fins de teste, você pode usar os seguintes usuários:
+
+### Médico:
+- Email: medico@teste.com
+- Senha: 123456
+- Especialização: Cardiologia
+
+### Paciente:
+- Email: paciente@teste.com
+- Senha: 123456
+
+## Segurança
+
+- Todas as senhas são armazenadas de forma criptografada no banco de dados
+- Autenticação baseada em tokens JWT
+- Validação de dados em formulários
+- Proteção de rotas por tipo de usuário
+
+## Telas Principais
+
+1. **Login e Registro**: Autenticação de usuários
+2. **Dashboard do Médico**: Visualização de consultas e estatísticas
+3. **Dashboard do Paciente**: Agendamento de consultas e histórico
+4. **Perfil**: Edição de dados pessoais
+
+## Fluxo de Uso Típico
+
+### Para Pacientes:
+1. Registrar-se como paciente
+2. Fazer login
+3. Visualizar médicos disponíveis
+4. Agendar consulta escolhendo médico, data e hora
+5. Visualizar consultas agendadas
+6. Cancelar consultas se necessário
+
+### Para Médicos:
+1. Registrar-se como médico, informando especialização
+2. Fazer login
+3. Visualizar consultas agendadas
+4. Gerenciar agenda e cancelar consultas se necessário
+5. Atualizar informações de perfil

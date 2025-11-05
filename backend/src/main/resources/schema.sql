@@ -1,0 +1,27 @@
+CREATE DATABASE IF NOT EXISTS consultorio;
+USE consultorio;
+
+CREATE TABLE pacientes (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    senha VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE medicos (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    senha VARCHAR(255) NOT NULL,
+    especializacao VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE consultas (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    paciente_id BIGINT NOT NULL,
+    medico_id BIGINT NOT NULL,
+    data DATE NOT NULL,
+    hora TIME NOT NULL,
+    FOREIGN KEY (paciente_id) REFERENCES pacientes(id) ON DELETE CASCADE,
+    FOREIGN KEY (medico_id) REFERENCES medicos(id) ON DELETE CASCADE
+);
